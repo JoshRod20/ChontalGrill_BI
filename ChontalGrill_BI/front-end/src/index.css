@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Balinese&display=swap");
+
+:root {
+  --global-height: 100vh;
+  --cliente-navbar-bg: #ffa500;
+  --administrador-navbar-bg: #32a852;
+  --mesero-navbar-bg: #08959f;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif Balinese", sans-serif !important;
+  height: 100%;
+  min-height: var(--global-height);
+  width: 100%;
+}

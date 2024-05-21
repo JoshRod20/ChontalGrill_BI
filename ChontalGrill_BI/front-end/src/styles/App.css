@@ -14,8 +14,29 @@
   padding-top: 70px; 
 }
 
+.center-button {
+  text-align: center;
+}
+
+
 .mt-custom {
   margin-top: 0px; /* Cambia 10px al valor deseado */
+}
+
+.botones {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  color: rgba(204, 91, 10, 0.897);
 }
 
 

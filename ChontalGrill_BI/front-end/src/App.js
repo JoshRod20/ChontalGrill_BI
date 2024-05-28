@@ -12,6 +12,7 @@ import Orden from './pages/Orden';
 import EstadisticasEmpleado from './pages/EstadisticasEmpleado';
 import EstadisticasOrden from './pages/EstadisticasOrde';
 import MenuCliente from './pages/MenuCliente';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const [userRol, setUserRol] = useState(localStorage.getItem('userRol') || 'Cliente');
@@ -56,6 +57,7 @@ function App() {
         <Route path="/orden" element={<PrivateRoute allowedRoles={['Mesero']}><><Header rol={userRol} /><Orden /></></PrivateRoute>} />
         <Route path="/EstadisticasEmpleado" element={<PrivateRoute allowedRoles={['Administrador']}><><Header rol={userRol} /><EstadisticasEmpleado /></></PrivateRoute>} />
         <Route path="/EstadisticasOrden" element={<PrivateRoute allowedRoles={['Administrador']}><><Header rol={userRol} /><EstadisticasOrden /></></PrivateRoute>} />
+        <Route path="/Dashboard" element={<PrivateRoute allowedRoles={['Administrador']}><><Header rol={userRol} /><Dashboard /></></PrivateRoute>} />
 
         <Route path="/menucliente" element={<><Header rol={userRol} /><MenuCliente /></>} />
       </Routes>

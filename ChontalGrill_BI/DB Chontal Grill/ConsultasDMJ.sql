@@ -33,7 +33,7 @@ SELECT
 FROM 
     H_Orden 
 JOIN 
-   DIM_Tiempo ON H_Orden .ID_Tiempo = DIM_Tiempo.ID_Tiempo
+    DIM_Tiempo ON H_Orden .ID_Tiempo = DIM_Tiempo.ID_Tiempo
 WHERE 
     Anio = 2024 AND Mes = 5
 GROUP BY 

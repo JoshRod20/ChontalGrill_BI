@@ -13,9 +13,8 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "88599564",
-    database: "chontal_grill2024",
-    /*"ChontalGrill_DM",*/
-});
+    database: "chontal_grill2024"
+})
 
 
 db.connect((err) => {
@@ -23,6 +22,23 @@ db.connect((err) => {
         console.error("Error de conexión a la base de datos:", err);
     } else {
         console.log("Conexión exitosa a la base de datos.");
+    }
+});
+
+// Configuración de la conexión a la base de datos
+const db2 = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "88599564",
+    database: "ChontalGrill_DM"
+})
+
+
+db2.connect((err) => {
+    if (err) {
+        console.error("Error de conexión a la base de datos:", err);
+    } else {
+        console.log("Conexión exitosa a la base de datos del data mart.");
     }
 });
 
@@ -59,8 +75,11 @@ app.use("/autenticacion_empleado", AutenticacionEmpleado);
 app.use("/metodopago", MetodoPago);
 
 
+// Importar y usar rutas para la segunda base de datos
+const estadisticas = require('./routes/estadisticas')(db2); // Pasa la instancia de la segunda base de datos a crudRoutesDb2
+app.use('/estadisticas', estadisticas);
+
 // Iniciar el servidor
 app.listen(port, () => {
-    console.log(`Codigo funcionando en el puerto ${port}`);
+    console.log(`Servidor backend en funcionamiento en el puerto ${port}`);
 });
-

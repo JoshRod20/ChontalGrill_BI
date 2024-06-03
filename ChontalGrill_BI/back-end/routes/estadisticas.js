@@ -142,24 +142,24 @@ router.get('/ordenestotalesporanio', (req, res) => {
 
 
 
-/*Ordenes por producto y por mes */
+/*Ordenes por producto y por mes*/
 router.get('/ordenesporproductoymes', (req, res) => {
   const sql =
-  `SELECT 
-  m.NombreC,
-  t.Mes,
-  t.Anio,
-  SUM(ho.Cantidad) AS Cantidad
-FROM 
-  H_Orden ho
-JOIN 
-  DIM_Menu m ON ho.ID_Menu = m.ID_Menu
-JOIN 
-  DIM_Tiempo t ON ho.ID_Tiempo = t.ID_Tiempo
-GROUP BY 
-  m.NombreC, t.Mes, t.Anio
-ORDER BY 
-  t.Anio, t.Mes, Cantidad DESC;`;
+    `SELECT 
+      m.Nombre,
+      t.Mes,
+      t.Anio,
+      SUM(ho.Cantidad) AS Cantidad
+  FROM 
+      H_Orden ho
+  JOIN 
+      DIM_Menu m ON ho.ID_Menu = m.ID_Menu
+  JOIN 
+      DIM_Tiempo t ON ho.ID_Tiempo = t.ID_Tiempo
+  GROUP BY 
+      m.Nombre, t.Mes, t.Anio
+  ORDER BY 
+      t.Anio, t.Mes, Cantidad DESC;`;
 
   db.query(sql, (err, results) => {
     if (err) {
@@ -172,18 +172,18 @@ ORDER BY
 });
 
 
-/*Top´5 órdenes por cantidad*/
+/*Top´5 órdenes por cantidad....*/
 router.get('/topordenescantidad', (req, res) => {
   const sql =
   `SELECT 
-  m.NombreC,
+  m.Nombre,
   SUM(ho.Cantidad) AS Cantidad
 FROM 
   H_Orden ho
 JOIN 
   DIM_Menu m ON ho.ID_Menu = m.ID_Menu
 GROUP BY 
-  m.NombreC
+  m.Nombre
 ORDER BY 
   Cantidad DESC
 LIMIT 5;`;

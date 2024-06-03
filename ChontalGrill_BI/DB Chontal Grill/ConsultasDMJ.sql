@@ -70,7 +70,7 @@ ORDER BY
 
 -- Ordenes por producto y por mes:
 SELECT 
-    m.NombreC,
+    m.Nombre,
     t.Mes,
     t.Anio,
     SUM(ho.Cantidad) AS Cantidad
@@ -81,21 +81,21 @@ JOIN
 JOIN 
     DIM_Tiempo t ON ho.ID_Tiempo = t.ID_Tiempo
 GROUP BY 
-    m.NombreC, t.Mes, t.Anio
+    m.Nombre, t.Mes, t.Anio
 ORDER BY 
     t.Anio, t.Mes, Cantidad DESC;
 
     
 -- Top 5 Órdenes por cantidad:
 SELECT 
-    m.NombreC,
+    m.Nombre,
     SUM(ho.Cantidad) AS Cantidad
 FROM 
     H_Orden ho
 JOIN 
     DIM_Menu m ON ho.ID_Menu = m.ID_Menu
 GROUP BY 
-    m.NombreC
+    m.Nombre
 ORDER BY 
     Cantidad DESC
 LIMIT 5;

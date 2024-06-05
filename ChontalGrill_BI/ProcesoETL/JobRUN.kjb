@@ -396,7 +396,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/rodri/OneDrive/Escritorio/ProcesoETL/ExtraccionEmpleado.ktr</filename>
+      <filename>C:/Users/rodri/OneDrive/Escritorio/ChontalGrill_BI/ChontalGrill_BI/ProcesoETL/ExtraccionEmpleado.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -435,7 +435,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/rodri/OneDrive/Escritorio/ProcesoETL/ExtraccionCliente.ktr</filename>
+      <filename>C:/Users/rodri/OneDrive/Escritorio/ChontalGrill_BI/ChontalGrill_BI/ProcesoETL/ExtraccionCliente.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -474,7 +474,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/rodri/OneDrive/Escritorio/ProcesoETL/ExtraccionMenu.ktr</filename>
+      <filename>C:/Users/rodri/OneDrive/Escritorio/ChontalGrill_BI/ChontalGrill_BI/ProcesoETL/ExtraccionMenu.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -513,7 +513,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/rodri/OneDrive/Escritorio/ProcesoETL/ExtraccionTipoOrden.ktr</filename>
+      <filename>C:/Users/rodri/OneDrive/Escritorio/ChontalGrill_BI/ChontalGrill_BI/ProcesoETL/ExtraccionTipoOrden.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -552,7 +552,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/rodri/OneDrive/Escritorio/ProcesoETL/ExtraccionFecha.ktr</filename>
+      <filename>C:/Users/rodri/OneDrive/Escritorio/ChontalGrill_BI/ChontalGrill_BI/ProcesoETL/ExtraccionFecha.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -591,7 +591,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/rodri/OneDrive/Escritorio/ProcesoETL/ExtraccionMetodoPago.ktr</filename>
+      <filename>C:/Users/rodri/OneDrive/Escritorio/ChontalGrill_BI/ChontalGrill_BI/ProcesoETL/ExtraccionMetodoPago.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -630,7 +630,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/rodri/OneDrive/Escritorio/ProcesoETL/TablaHechos.ktr</filename>
+      <filename>C:/Users/rodri/OneDrive/Escritorio/ChontalGrill_BI/ChontalGrill_BI/ProcesoETL/TablaHechos.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>

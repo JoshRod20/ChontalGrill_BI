@@ -12,7 +12,7 @@ const port = 5000;
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "88599564",
+    password: "dayana2005",
     database: "chontal_grill2024"
 })
 
@@ -29,7 +29,7 @@ db.connect((err) => {
 const db2 = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "88599564",
+    password: "dayana2005",
     database: "ChontalGrill_DM"
 })
 
@@ -76,8 +76,8 @@ app.use("/metodopago", MetodoPago);
 
 
 // Importar y usar rutas para la segunda base de datos
-const estadisticas = require('./routes/estadisticas')(db2); // Pasa la instancia de la segunda base de datos a crudRoutesDb2
-app.use('/estadisticas', estadisticas);
+const estadisticas = require("./routes/estadisticas.js")(db2); // Pasa la instancia de la segunda base de datos a crudRoutesDb2
+app.use("/estadisticas", estadisticas);
 
 // Iniciar el servidor
 app.listen(port, () => {

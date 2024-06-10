@@ -150,7 +150,7 @@ function Header({ rol, setRol }) {
     <Link to="/EstadisticasEmpleado" className="link-unstyled">Estadisticas Empleado</Link>
   </NavDropdown.Item>
   <NavDropdown.Item>
-    <Link to="/EstadisticasOrden" className="link-unstyled">Estadisticas Orden</Link>
+    <Link to="/EstadisticasOrden" className="link-unstyled">Reportes</Link>
   </NavDropdown.Item>
   <NavDropdown.Item>
     <Link to="/Dashboard" className="link-unstyled">Dashboard</Link>

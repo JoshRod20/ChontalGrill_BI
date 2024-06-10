@@ -10,7 +10,7 @@ import Menu from './pages/Menu';
 import GestionOrden from './pages/GestionOrden';
 import Orden from './pages/Orden';
 import EstadisticasEmpleado from './pages/EstadisticasEmpleado';
-import EstadisticasOrden from './pages/EstadisticasOrde';
+import EstadisticasOrden from './pages/EstadisticasOrden';
 import MenuCliente from './pages/MenuCliente';
 import Dashboard from './pages/Dashboard';
 

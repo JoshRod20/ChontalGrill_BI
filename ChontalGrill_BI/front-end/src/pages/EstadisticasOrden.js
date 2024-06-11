@@ -373,7 +373,7 @@
         const cantidad = ordenes5.map((orden5) => orden5.Cantidad);
 
         const estadistica5 = new Chart(ord, {
-            type: "pie",
+            type: "bar",
             data: {
             labels: nombreC,
             datasets: [
@@ -405,15 +405,15 @@
         const pdf = new jsPDF();
         const imgData = canvas.toDataURL("image/png");
         pdf.text("Reporte de cantidad de órdenes totales por año", 50, 10);
-        pdf.addImage(imgData, "PNG", 10, 20, 120, 120);
+        pdf.addImage(imgData, "PNG", 10, 20, 180, 120);
 
-        fetch("http://localhost:5000/estadisticas/ordenesporproductoymes")
+        fetch("http://localhost:5000/estadisticas/ordenesporproductoymes2")
             .then((response) => response.json())
             .then((ordenes5) => {
             let y = 150;
 
             ordenes5.forEach((orden) => {
-                pdf.text(`Nombre: ${orden.NombreC}`, 20, y);
+                pdf.text(`Nombre: ${orden.Nombre}`, 20, y);
                 pdf.text(
                 `Cantidad total de órdenes: ${orden.Cantidad}`,
                 20,
@@ -434,7 +434,7 @@
         }
     };
 
-    const [ordenes6, setOrdenes6] = useState([]); // Estado 'ordenes5' con su función 'setOrdenes5'
+    /*const [ordenes6, setOrdenes6] = useState([]); // Estado 'ordenes5' con su función 'setOrdenes5'
     const [myChart6, setMyChart6] = useState(null); // Estado 'myChart5' con su función 'setMyChart5'
 
     useEffect(() => {
@@ -511,9 +511,9 @@
         } catch (error) {
         console.error("Error al generar el reporte con imagen:", error);
         }
-    };
+    };*/
 
-    const [ordenes7, setOrdenes7] = useState([]);
+    /*const [ordenes7, setOrdenes7] = useState([]);
     const [myChart7, setMyChart7] = useState(null);
 
     useEffect(() => {
@@ -590,7 +590,7 @@
         } catch (error) {
         console.error("Error al generar el reporte con imagen:", error);
         }
-    };
+    };*/
 
 
     return (
@@ -654,40 +654,14 @@
                 </Card.Body>
                 </Card>
             </Col>
-            <Col sm="6" md="6" lg="6">
+            <Col sm="12" md="12" lg="12">
                 <Card>
                 <Card.Body>
-                    <Card.Title className="title">Cantidad de órdenes totales por pedido anio</Card.Title>
+                    <Card.Title className="title">Top 15 Cantidad de órdenes totales por pedido anio</Card.Title>
                     <canvas id="myChart5" height="120"></canvas>
                 </Card.Body>
                 <Card.Body>
                     <Button onClick={generarReporteAlmacenImg5}>
-                    Imprimir PDF
-                    </Button>
-                </Card.Body>
-                </Card>
-            </Col>
-            <Col sm="6" md="6" lg="6">
-                <Card>
-                <Card.Body>
-                    <Card.Title className="title">Top órdenes totales</Card.Title>
-                    <canvas id="myChart6" height="120"></canvas>
-                </Card.Body>
-                <Card.Body>
-                    <Button onClick={generarReporteAlmacenImg6}>
-                    Imprimir PDF
-                    </Button>
-                </Card.Body>
-                </Card>
-            </Col>
-            <Col sm="6" md="6" lg="6">
-                <Card>
-                <Card.Body>
-                    <Card.Title className="title">Órdenes por producto/mes</Card.Title>
-                    <canvas id="myChart7" height="120"></canvas>
-                </Card.Body>
-                <Card.Body>
-                    <Button onClick={generarReporteAlmacenImg7}>
                     Imprimir PDF
                     </Button>
                 </Card.Body>

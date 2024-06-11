@@ -114,7 +114,8 @@ GROUP BY
   GROUP BY 
       m.Nombre, t.Mes, t.Anio
   ORDER BY 
-      t.Anio, t.Mes, Cantidad DESC;`;
+      t.Anio, t.Mes, Cantidad DESC
+  LIMIT 15;`;
 
     db.query(sql, (err, results) => {
       if (err) {
@@ -126,6 +127,34 @@ GROUP BY
     });
   });
 
+
+
+  router.get("/ordenesporproductoymes2", (req, res) => {
+    const sql = `SELECT 
+      m.Nombre,
+      t.Mes,
+      t.Anio,
+      SUM(ho.Cantidad) AS Cantidad
+  FROM 
+      H_Orden ho
+  JOIN 
+      DIM_Menu m ON ho.ID_Menu = m.ID_Menu
+  JOIN 
+      DIM_Tiempo t ON ho.ID_Tiempo = t.ID_Tiempo
+  GROUP BY 
+      m.Nombre, t.Mes, t.Anio
+  ORDER BY 
+      t.Anio, t.Mes, Cantidad DESC;`;
+
+    db.query(sql, (err, results) => {
+      if (err) {
+        console.error("Error al leer registros:", err);
+        res.status(500).json({ error: "Error al leer registros" });
+      } else {
+        res.status(200).json(results);
+      }
+    });
+  });
 
   /*Top 5 pedidos más vendidos por cantidad*/
   /*router.get("/pedidosvendidoscant", (req, res) => {

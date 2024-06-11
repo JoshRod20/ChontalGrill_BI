@@ -19,9 +19,9 @@ const imprimirEstadisticas = () => {
             <Col sm="12" md="12" lg="12">
                 <Card>
                 <Card.Body>
-                    <Card.Title>Estado del almacen</Card.Title>
+                    <Card.Title>Estado ChontalGrill</Card.Title>
 
-                    <iframe title="REPORTE KARDEX" width="1024" height="804" src="https://app.powerbi.com/view?r=eyJrIjoiYzJhY2RhOTEtMGIzNy00ZjE2LWFlZGYtZTVmOThjNjY0Yzk2IiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                    <iframe title="REPORTE CHONTALGRILL" width="1024" height="804" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiNzM1ZjkyMTAtNjlhZS00MDc4LWFhNmItMDU3ZjM2OTZhZWNjIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
                     <Button onClick={imprimirEstadisticas}>
                     Generar reporte con imagen

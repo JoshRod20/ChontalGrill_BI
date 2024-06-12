@@ -6,7 +6,7 @@ module.exports = (db) => {
 
   router.get('/read', (req, res) => {
     const sql = `
-      SELECT m.*, m.Nombre as NombreC, TO_BASE64(m.Imagen) as ImagenBase64 
+      SELECT m.*, m.Nombre as Nombre, TO_BASE64(m.Imagen) as ImagenBase64 
       FROM Menu m 
       INNER JOIN Categoria c ON m.ID_Categoria = c.ID_Categoria
     `;

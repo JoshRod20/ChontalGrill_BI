@@ -663,7 +663,7 @@
         <Header rol={rol} />
         <Container className="margen-conten" responsive>
             <Row className="g-3">
-            <Col sm="6" md="6" lg="6">
+            <Col sm="12" md="6" lg="6">
                 <Card>
                 <Card.Body>
                     <Card.Title className="title">
@@ -678,7 +678,7 @@
                 </Card.Body>
                 </Card>
             </Col>
-            <Col sm="6" md="6" lg="6">
+            <Col sm="12" md="6" lg="6">
                 <Card>
                 <Card.Body>
                     <Card.Title className="title">
@@ -693,7 +693,7 @@
                 </Card.Body>
                 </Card>
             </Col>
-            <Col sm="6" md="6" lg="6">
+            <Col sm="12" md="6" lg="6">
                 <Card>
                 <Card.Body>
                     <Card.Title className="title">Cantidad de órdenes por dia</Card.Title>
@@ -706,7 +706,7 @@
                 </Card.Body>
                 </Card>
             </Col>
-            <Col sm="6" md="6" lg="6">
+            <Col sm="12" md="6" lg="6">
                 <Card>
                 <Card.Body>
                     <Card.Title className="title">Cantidad de órdenes totales por pedido</Card.Title>

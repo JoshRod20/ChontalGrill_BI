@@ -23,5 +23,8 @@
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^6.16.0",
     "react-select": "^5.8.0"
+  },
+  "devDependencies": {
+    "jasmine": "^5.1.0"
   }
 }

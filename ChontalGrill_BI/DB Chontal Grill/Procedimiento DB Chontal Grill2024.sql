@@ -2,13 +2,14 @@ USE chontal_grill2024;
 
 /*Procedimiento almacenado de Categoria*/
 
+DROP PROCEDURE InsertarCategoria;
 
 DELIMITER //
 CREATE PROCEDURE InsertarCategoria(
     IN p_Nombre VARCHAR(50)
 )
 BEGIN
-    INSERT INTO Categoria (Nombre)
+    INSERT INTO Categoria (NombreC)
     VALUES (p_Nombre);
 END //
 DELIMITER ;

@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button, Container, Card, Form } from "react-bootstrap";
 import "../styles/HeaderAdministrador.css";
-
-
-
 import { FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 
 function VisualizarCategoria() {
@@ -110,14 +107,14 @@ function VisualizarCategoria() {
   };
 
   const categoriasFiltradas = Array.isArray(categorias)
-  ? categorias.filter((categoria) =>
-      categoria.Nombre.toLowerCase().includes(nombreBusqueda.toLowerCase())
-    )
-  : [];
+    ? categorias.filter((categoria) =>
+        categoria && categoria.Nombre && categoria.Nombre.toLowerCase().includes(nombreBusqueda.toLowerCase())
+      )
+    : [];
 
   return (
-    <div className=".body-content">
-      <Container className=".mt-custom">
+    <div className="body-content">
+      <Container className="mt-custom">
         <Card>
           <Card.Body>
             <Card.Title>Gestión de Categorías</Card.Title>
@@ -146,9 +143,9 @@ function VisualizarCategoria() {
             <Table striped bordered hover className="mt-3">
               <thead>
                 <tr>
-                <th style={{ textAlign: "center" }} >ID</th>
-                <th style={{ textAlign: "center" }}>Nombre</th>
-                <th style={{ textAlign: "center" }}>Acciones</th>
+                  <th style={{ textAlign: "center" }}>ID</th>
+                  <th style={{ textAlign: "center" }}>Nombre</th>
+                  <th style={{ textAlign: "center" }}>Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -156,7 +153,6 @@ function VisualizarCategoria() {
                   <tr key={categoria.ID_Categoria}>
                     <td>{categoria.ID_Categoria}</td>
                     <td>{categoria.Nombre}</td>
-                    <td>
                     <td style={{ display: 'flex', justifyContent: 'center' }}>
                       <Button
                         variant="outline-primary"
@@ -176,7 +172,6 @@ function VisualizarCategoria() {
                       >
                         <FaTrash size={32} />
                       </Button>
-                    </td>
                     </td>
                   </tr>
                 ))}

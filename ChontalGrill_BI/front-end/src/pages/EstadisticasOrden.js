@@ -41,7 +41,20 @@
                 {
                 label: "Cantidad de órdenes por año", // Etiqueta para la leyenda del gráfico
                 data: cantidad, // Asigna las cantidades de órdenes por año para la visualización
-                backgroundColor: "rgba(51, 214, 18, 0.843)", // Define el color de fondo de las barras, puede ser cualquiera
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.7)",   // Rojo
+                    "rgba(54, 162, 235, 0.7)",   // Azul
+                    "rgba(255, 206, 86, 0.7)",   // Amarillo
+                    "rgba(75, 192, 192, 0.7)",   // Verde claro
+                    "rgba(153, 102, 255, 0.7)",  // Púrpura
+                    "rgba(255, 159, 64, 0.7)",   // Naranja
+                    "rgba(199, 199, 199, 0.7)",  // Gris claro
+                    "rgba(83, 102, 255, 0.7)",   // Azul medio
+                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
+                    "rgba(76, 175, 80, 0.7)",    // Verde
+                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
+                    "rgba(121, 85, 72, 0.7)"     // Marrón
+                ], // Define el color de fondo de las barras, puede ser cualquiera
                 borderColor: "rgba(51, 214, 18, 0)", // Define el color del borde de las barras, del mismo color
                 borderWidth: 1, // Define el ancho del borde de las barras, como prefieraws
                 },
@@ -70,7 +83,7 @@
         // Añade un texto al documento PDF
         pdf.text("Reporte de cantidad de órdenes por año", 50, 10);
         // Añade la imagen capturada del gráfico al documento PDF, con ajustes de coordenadas y tamaño
-        pdf.addImage(imgData, "PNG", 10, 20, 120, 120);
+        pdf.addImage(imgData, "PNG", 10, 20, 180, 120);
 
         fetch("http://localhost:5000/estadisticas/ordenestotalesporanio") // Realiza una solicitud GET al servidor para obtener las órdenes
             .then((response) => response.json()) // Convierte la respuesta a formato JSON
@@ -131,7 +144,20 @@
                 {
                 label: "Cantidad de órdenes por mes",
                 data: cantidad,
-                backgroundColor: "rgba(51, 214, 18, 0.843)",
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.7)",   // Rojo
+                    "rgba(54, 162, 235, 0.7)",   // Azul
+                    "rgba(255, 206, 86, 0.7)",   // Amarillo
+                    "rgba(75, 192, 192, 0.7)",   // Verde claro
+                    "rgba(153, 102, 255, 0.7)",  // Púrpura
+                    "rgba(255, 159, 64, 0.7)",   // Naranja
+                    "rgba(199, 199, 199, 0.7)",  // Gris claro
+                    "rgba(83, 102, 255, 0.7)",   // Azul medio
+                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
+                    "rgba(76, 175, 80, 0.7)",    // Verde
+                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
+                    "rgba(121, 85, 72, 0.7)"     // Marrón
+                ],
                 borderColor: "rgba(51, 214, 18, 0)",
                 borderWidth: 1,
                 },
@@ -156,7 +182,7 @@
         const pdf = new jsPDF();
         const imgData = canvas.toDataURL("image/png");
         pdf.text("Reporte de cantidad de órdenes por mes", 50, 10);
-        pdf.addImage(imgData, "PNG", 10, 20, 120, 120);
+        pdf.addImage(imgData, "PNG", 10, 20, 180, 120);
 
         fetch("http://localhost:5000/estadisticas/ordenespormesdeanio")
             .then((response) => response.json())
@@ -214,7 +240,20 @@
                 {
                 label: "Cantidad de órdenes por dia",
                 data: cantidad,
-                backgroundColor: "rgba(51, 214, 18, 0.843)",
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.7)",   // Rojo
+                    "rgba(54, 162, 235, 0.7)",   // Azul
+                    "rgba(255, 206, 86, 0.7)",   // Amarillo
+                    "rgba(75, 192, 192, 0.7)",   // Verde claro
+                    "rgba(153, 102, 255, 0.7)",  // Púrpura
+                    "rgba(255, 159, 64, 0.7)",   // Naranja
+                    "rgba(199, 199, 199, 0.7)",  // Gris claro
+                    "rgba(83, 102, 255, 0.7)",   // Azul medio
+                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
+                    "rgba(76, 175, 80, 0.7)",    // Verde
+                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
+                    "rgba(121, 85, 72, 0.7)"     // Marrón
+                ],
                 borderColor: "rgba(51, 214, 18, 0)",
                 borderWidth: 1,
                 },
@@ -239,7 +278,7 @@
         const pdf = new jsPDF();
         const imgData = canvas.toDataURL("image/png");
         pdf.text("Reporte de cantidad de órdenes por dia", 50, 10);
-        pdf.addImage(imgData, "PNG", 10, 20, 120, 120);
+        pdf.addImage(imgData, "PNG", 10, 20, 180, 120);
 
         fetch("http://localhost:5000/estadisticas/ordenespordiayanio")
             .then((response) => response.json())
@@ -297,7 +336,20 @@
                 {
                 label: "Cantidad de órdenes totales por pedido",
                 data: cantidad,
-                backgroundColor: "rgba(51, 214, 18, 0.843)",
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.7)",   // Rojo
+                    "rgba(54, 162, 235, 0.7)",   // Azul
+                    "rgba(255, 206, 86, 0.7)",   // Amarillo
+                    "rgba(75, 192, 192, 0.7)",   // Verde claro
+                    "rgba(153, 102, 255, 0.7)",  // Púrpura
+                    "rgba(255, 159, 64, 0.7)",   // Naranja
+                    "rgba(199, 199, 199, 0.7)",  // Gris claro
+                    "rgba(83, 102, 255, 0.7)",   // Azul medio
+                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
+                    "rgba(76, 175, 80, 0.7)",    // Verde
+                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
+                    "rgba(121, 85, 72, 0.7)"     // Marrón
+                ],
                 borderColor: "rgba(51, 214, 18, 0)",
                 borderWidth: 1,
                 },
@@ -322,7 +374,7 @@
         const pdf = new jsPDF();
         const imgData = canvas.toDataURL("image/png");
         pdf.text("Reporte de cantidad de órdenes totales por pedido", 50, 10);
-        pdf.addImage(imgData, "PNG", 10, 20, 120, 120);
+        pdf.addImage(imgData, "PNG", 10, 20, 180, 120);
 
         fetch("http://localhost:5000/estadisticas/ordenestotalesporpedido")
             .then((response) => response.json())
@@ -380,7 +432,20 @@
                 {
                 label: "Cantidad de órdenes totales por año",
                 data: cantidad,
-                backgroundColor: "rgba(51, 214, 18, 0.843)",
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.7)",   // Rojo
+                    "rgba(54, 162, 235, 0.7)",   // Azul
+                    "rgba(255, 206, 86, 0.7)",   // Amarillo
+                    "rgba(75, 192, 192, 0.7)",   // Verde claro
+                    "rgba(153, 102, 255, 0.7)",  // Púrpura
+                    "rgba(255, 159, 64, 0.7)",   // Naranja
+                    "rgba(199, 199, 199, 0.7)",  // Gris claro
+                    "rgba(83, 102, 255, 0.7)",   // Azul medio
+                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
+                    "rgba(76, 175, 80, 0.7)",    // Verde
+                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
+                    "rgba(121, 85, 72, 0.7)"     // Marrón
+                ],
                 borderColor: "rgba(51, 214, 18, 0)",
                 borderWidth: 1,
                 },
@@ -657,7 +722,7 @@
             <Col sm="12" md="12" lg="12">
                 <Card>
                 <Card.Body>
-                    <Card.Title className="title">Top 15 Cantidad de órdenes totales por pedido anio</Card.Title>
+                    <Card.Title className="title">Top 15 Cantidad de órdenes totales por pedido/Año</Card.Title>
                     <canvas id="myChart5" height="120"></canvas>
                 </Card.Body>
                 <Card.Body>

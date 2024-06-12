@@ -114,7 +114,7 @@ GROUP BY
   GROUP BY 
       m.Nombre, t.Mes, t.Anio
   ORDER BY 
-      t.Anio, t.Mes, Cantidad DESC
+      Cantidad DESC, t.Anio, t.Mes
   LIMIT 15;`;
 
     db.query(sql, (err, results) => {

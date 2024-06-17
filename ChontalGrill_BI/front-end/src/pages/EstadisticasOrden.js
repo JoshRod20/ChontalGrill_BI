@@ -6,10 +6,43 @@
     import "../styles/App.css";
     import html2canvas from "html2canvas";
 
+    import emailjs from 'emailjs-com';
+
     function Estadisticas({ rol }) {
     const [ordenes, setOrdenes] = useState([]); // Debes declarar una constante para cada gráfico para la declaración del estado 'ordenes' y su función 'setOrdenes' a través de useState, con un valor inicial de un array vacío
 
     const [myChart, setMyChart] = useState(null); // Declara del estado 'myChart' y su función 'setMyChart' a través de useState, con un valor inicial de 'null' para cada gráfico
+
+
+    const formatearOrdenestotalesporanio = (ordenesAnio) => {
+        return ordenesAnio.map(ordenesAnio => {
+        return `Anio: ${ordenesAnio.Anio} \nCantidad: ${ordenesAnio.Cantidad}`;
+        }).join('\n\n');
+    };
+
+    const enviarCorreo = () => {
+    const ordenesAnioFormateadas = formatearOrdenestotalesporanio(ordenes);
+
+    // Datos de ejemplo (reemplaza con tus datos reales)
+    const data = {
+    to_name: 'Josh',
+    user_email: 'rodriguezjosh2003@gmail.com',
+    message: ordenesAnioFormateadas,
+    };
+    
+
+        // Envía el correo utilizando EmailJS
+        emailjs.send('service_2zxzlyq', 'template_27rchdp', data, 'g9W1Ko36LLty8H8d-')
+        .then((response) => {
+        alert('Correo enviado.');
+        console.log('Correo enviado.', response);
+        })
+        .catch((error) => {
+        alert('Error al enviar el correo.');
+        console.error('Error al enviar el correo:', error);
+        });
+    };
+
 
     // Gráfico 2 //////////////////////////////////////////////////////////////////////////////////////////////
     useEffect(() => {
@@ -118,6 +151,37 @@
     const [ordenes2, setOrdenes2] = useState([]); // Estado 'ordenes2' con su función 'setOrdenes2'
     const [myChart2, setMyChart2] = useState(null); // Estado 'myChart2' con su función 'setMyChart2'
 
+    const formatearordenespormesdeanio = (ordenes2) => {
+        return ordenes2.map(orden2 => {
+        return `Mes: ${orden2.Mes} \nCantidad: ${orden2.Cantidad}`;
+        }).join('\n\n');
+    };
+
+    const enviarCorreo2 = () => {
+    const ordenespormesdeanioFormateadas = formatearordenespormesdeanio(ordenes2);
+
+    // Datos de ejemplo (reemplaza con tus datos reales)
+    const data = {
+    to_name: 'Josh',
+    user_email: 'rodriguezjosh2003@gmail.com',
+    message: ordenespormesdeanioFormateadas,
+    };
+    
+
+        // Envía el correo utilizando EmailJS
+        emailjs.send('service_2zxzlyq', 'template_27rchdp', data, 'g9W1Ko36LLty8H8d-')
+        .then((response) => {
+        alert('Correo enviado.');
+        console.log('Correo enviado.', response);
+        })
+        .catch((error) => {
+        alert('Error al enviar el correo.');
+        console.error('Error al enviar el correo:', error);
+        });
+    };
+
+    //gráfico 2
+
     useEffect(() => {
         fetch("http://localhost:5000/estadisticas/ordenespormesdeanio")
         .then((response) => response.json())
@@ -213,6 +277,37 @@
 
     const [ordenes3, setOrdenes3] = useState([]); // Estado 'ordenes2' con su función 'setOrdenes2'
     const [myChart3, setMyChart3] = useState(null); // Estado 'myChart2' con su función 'setMyChart2'
+
+
+    const formatearordenespordiayanio = (ordenes3) => {
+        return ordenes3.map(ordenes3 => {
+        return `Dia: ${ordenes3.Dia} \nCantidad: ${ordenes3.Cantidad}`;
+        }).join('\n\n');
+    };
+
+    const enviarCorreo3 = () => {
+    const ordenespordiayanioFormateadas = formatearordenespordiayanio(ordenes3);
+
+    // Datos de ejemplo (reemplaza con tus datos reales)
+    const data = {
+    to_name: 'Josh',
+    user_email: 'rodriguezjosh2003@gmail.com',
+    message: ordenespordiayanioFormateadas,
+    };
+    
+
+        // Envía el correo utilizando EmailJS
+        emailjs.send('service_2zxzlyq', 'template_27rchdp', data, 'g9W1Ko36LLty8H8d-')
+        .then((response) => {
+        alert('Correo enviado.');
+        console.log('Correo enviado.', response);
+        })
+        .catch((error) => {
+        alert('Error al enviar el correo.');
+        console.error('Error al enviar el correo:', error);
+        });
+    };
+
 
     useEffect(() => {
         fetch("http://localhost:5000/estadisticas/ordenespordiayanio")
@@ -310,6 +405,36 @@
     const [ordenes4, setOrdenes4] = useState([]);
     const [myChart4, setMyChart4] = useState(null);
 
+
+    const formatearordenestotalesporpedido = (ordenes4) => {
+        return ordenes4.map(ordenes4 => {
+        return `ID_Menu: ${ordenes4.ID_Menu} \nNombre: ${ordenes4.Nombre} \nCantidad: ${ordenes4.Cantidad} \nMonto: ${ordenes4.Monto}`;
+        }).join('\n\n');
+    };
+
+    const enviarCorreo4 = () => {
+    const ordenestotalesporpedidoFormateadas = formatearordenestotalesporpedido(ordenes4);
+
+    // Datos de ejemplo (reemplaza con tus datos reales)
+    const data = {
+    to_name: 'Josh',
+    user_email: 'rodriguezjosh2003@gmail.com',
+    message: ordenestotalesporpedidoFormateadas,
+    };
+    
+
+        // Envía el correo utilizando EmailJS
+        emailjs.send('service_2zxzlyq', 'template_27rchdp', data, 'g9W1Ko36LLty8H8d-')
+        .then((response) => {
+        alert('Correo enviado.');
+        console.log('Correo enviado.', response);
+        })
+        .catch((error) => {
+        alert('Error al enviar el correo.');
+        console.error('Error al enviar el correo:', error);
+        });
+    };
+
     useEffect(() => {
         fetch("http://localhost:5000/estadisticas/ordenestotalesporpedido")
         .then((response) => response.json())
@@ -406,6 +531,36 @@
     const [ordenes5, setOrdenes5] = useState([]); // Estado 'ordenes5' con su función 'setOrdenes5'
     const [myChart5, setMyChart5] = useState(null); // Estado 'myChart5' con su función 'setMyChart5'
 
+
+    const formatearordenesporproductoymes = (ordenes5) => {
+        return ordenes5.map(ordenes5 => {
+        return `Nombre: ${ordenes5.Nombre} \nCantidad: ${ordenes5.Cantidad} \nMes: ${ordenes5.Mes}`;
+        }).join('\n\n');
+    };
+
+    const enviarCorreo5 = () => {
+    const ordenesporproductoymesFormateadas = formatearordenesporproductoymes(ordenes5);
+
+    // Datos de ejemplo (reemplaza con tus datos reales)
+    const data = {
+    to_name: 'Josh',
+    user_email: 'rodriguezjosh2003@gmail.com',
+    message: ordenesporproductoymesFormateadas,
+    };
+    
+
+        // Envía el correo utilizando EmailJS
+        emailjs.send('service_2zxzlyq', 'template_27rchdp', data, 'g9W1Ko36LLty8H8d-')
+        .then((response) => {
+        alert('Correo enviado.');
+        console.log('Correo enviado.', response);
+        })
+        .catch((error) => {
+        alert('Error al enviar el correo.');
+        console.error('Error al enviar el correo:', error);
+        });
+    };
+
     useEffect(() => {
         fetch("http://localhost:5000/estadisticas/ordenesporproductoymes")
         .then((response) => response.json())
@@ -499,163 +654,7 @@
         }
     };
 
-    /*const [ordenes6, setOrdenes6] = useState([]); // Estado 'ordenes5' con su función 'setOrdenes5'
-    const [myChart6, setMyChart6] = useState(null); // Estado 'myChart5' con su función 'setMyChart5'
 
-    useEffect(() => {
-        fetch("http://localhost:5000/estadisticas/topordenescantidad")
-        .then((response) => response.json())
-        .then((data) => setOrdenes6(data))
-        .catch((error) => console.error("Error al obtener las órdenes:", error));
-    }, []);
-
-    useEffect(() => {
-        if (ordenes6.length > 0) {
-        const ord = document.getElementById("myChart6");
-
-        if (myChart6 !== null) {
-            myChart6.destroy();
-        }
-
-        const nombre = ordenes6.map((orden6) => orden6.Nombre);
-        const cantidad = ordenes6.map((orden6) => orden6.Cantidad);
-
-        const estadistica6 = new Chart(ord, {
-            type: "bar",
-            data: {
-            labels: nombre,
-            datasets: [
-                {
-                label: "Top órdenes totales",
-                data: cantidad,
-                backgroundColor: "rgba(51, 214, 18, 0.843)",
-                borderColor: "rgba(51, 214, 18, 0)",
-                borderWidth: 1,
-                },
-            ],
-            },
-            options: {
-            scales: {
-                y: {
-                beginAtZero: true,
-                },
-            },
-            },
-        });
-
-        setMyChart6(estadistica6);
-        }
-    }, [ordenes6]);
-
-    const generarReporteAlmacenImg6 = async () => {
-        try {
-        const canvas = await html2canvas(document.getElementById("myChart6"));
-        const pdf = new jsPDF();
-        const imgData = canvas.toDataURL("image/png");
-        pdf.text("Reporte de top de órdenes", 50, 10);
-        pdf.addImage(imgData, "PNG", 10, 20, 120, 120);
-
-        fetch("http://localhost:5000/estadisticas/topordenescantidad")
-            .then((response) => response.json())
-            .then((ordenes6) => {
-            let y = 150;
-
-            ordenes6.forEach((orden) => {
-                pdf.text(`Nombre: ${orden.NombreC}`, 20, y);
-                pdf.text(`Top de órdenes: ${orden.Cantidad}`, 20, y + 10);
-
-                y += 30;
-                if (y >= 280) {
-                pdf.addPage();
-                y = 15;
-                }
-            });
-
-            pdf.save("reporte_top_ordenes_por_cantidad.pdf");
-            });
-        } catch (error) {
-        console.error("Error al generar el reporte con imagen:", error);
-        }
-    };*/
-
-    /*const [ordenes7, setOrdenes7] = useState([]);
-    const [myChart7, setMyChart7] = useState(null);
-
-    useEffect(() => {
-        fetch("http://localhost:5000/estadisticas/ordenesporproductoymes")
-        .then((response) => response.json())
-        .then((data) => setOrdenes7(data))
-        .catch((error) => console.error("Error al obtener las órdenes:", error));
-    }, []);
-
-    useEffect(() => {
-        if (ordenes6.length > 0) {
-        const ord = document.getElementById("myChart7");
-
-        if (myChart7 !== null) {
-            myChart7.destroy();
-        }
-
-        const ordenesCantidad = ordenes7.map((orden7) => orden7.Mes);
-        const cantidad = ordenes7.map((orden7) => orden7.Cantidad);
-
-        const estadistica7 = new Chart(ord, {
-            type: "bar",
-            data: {
-            labels: ordenesCantidad,
-            datasets: [
-                {
-                label: "Órdenes producto",
-                data: cantidad,
-                backgroundColor: "rgba(51, 214, 18, 0.843)",
-                borderColor: "rgba(51, 214, 18, 0)",
-                borderWidth: 1,
-                },
-            ],
-            },
-            options: {
-            scales: {
-                y: {
-                beginAtZero: true,
-                },
-            },
-            },
-        });
-
-        setMyChart7(estadistica7);
-        }
-    }, [ordenes7]);
-
-    const generarReporteAlmacenImg7 = async () => {
-        try {
-        const canvas = await html2canvas(document.getElementById("myChart7"));
-        const pdf = new jsPDF();
-        const imgData = canvas.toDataURL("image/png");
-        pdf.text("Reporte de top de órdenes", 50, 10);
-        pdf.addImage(imgData, "PNG", 10, 20, 120, 120);
-
-        fetch("http://localhost:5000/estadisticas/ordenesporproductoymes")
-            .then((response) => response.json())
-            .then((ordenes7) => {
-            let y = 150;
-
-            ordenes7.forEach((orden) => {
-                pdf.text(`Nombre: ${orden.NombreC}`, 20, y);
-                pdf.text(`Top de órdenes: ${orden.Cantidad}`, 20, y + 10);
-
-                y += 30;
-                if (y >= 280) {
-                pdf.addPage();
-                y = 15;
-                }
-            });
-
-            pdf.save("reporte_ordenes_por_producto_mes.pdf");
-            });
-        } catch (error) {
-        console.error("Error al generar el reporte con imagen:", error);
-        }
-    };*/
 
 
     return (
@@ -671,9 +670,12 @@
                     </Card.Title>
                     <canvas id="myChart" height="120"></canvas>
                 </Card.Body>
-                <Card.Body>
+                <Card.Body style={{ textAlign: 'center' }}>
                     <Button onClick={generarReporteAlmacenImg1}>
                     Imprimir PDF
+                    </Button>
+                    <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo} >
+                        Enviar por Correo
                     </Button>
                 </Card.Body>
                 </Card>
@@ -686,9 +688,12 @@
                     </Card.Title>
                     <canvas id="myChart2" height="120"></canvas>
                 </Card.Body>
-                <Card.Body>
+                <Card.Body style={{ textAlign: 'center' }}>
                     <Button onClick={generarReporteAlmacenImg0}>
                     Imprimir PDF
+                    </Button>
+                    <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo2} >
+                        Enviar por Correo
                     </Button>
                 </Card.Body>
                 </Card>
@@ -699,9 +704,12 @@
                     <Card.Title className="title">Cantidad de órdenes por dia</Card.Title>
                     <canvas id="myChart3" height="120"></canvas>
                 </Card.Body>
-                <Card.Body>
+                <Card.Body style={{ textAlign: 'center' }}>
                     <Button onClick={generarReporteAlmacenImg3}>
                     Imprimir PDF
+                    </Button>
+                    <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo3} >
+                        Enviar por Correo
                     </Button>
                 </Card.Body>
                 </Card>
@@ -712,9 +720,12 @@
                     <Card.Title className="title">Cantidad de órdenes totales por pedido</Card.Title>
                     <canvas id="myChart4" height="120"></canvas>
                 </Card.Body>
-                <Card.Body>
+                <Card.Body style={{ textAlign: 'center' }}>
                     <Button onClick={generarReporteAlmacenImg4}>
                     Imprimir PDF
+                    </Button>
+                    <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo4} >
+                        Enviar por Correo
                     </Button>
                 </Card.Body>
                 </Card>
@@ -725,9 +736,12 @@
                     <Card.Title className="title">Top 15 Cantidad de órdenes totales por pedido/Año</Card.Title>
                     <canvas id="myChart5" height="120"></canvas>
                 </Card.Body>
-                <Card.Body>
+                <Card.Body style={{ textAlign: 'center' }}>
                     <Button onClick={generarReporteAlmacenImg5}>
                     Imprimir PDF
+                    </Button>
+                    <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo5} >
+                        Enviar por Correo
                     </Button>
                 </Card.Body>
                 </Card>

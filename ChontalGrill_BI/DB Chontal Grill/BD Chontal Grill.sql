@@ -1,5 +1,6 @@
 CREATE DATABASE chontal_grill2024;
 USE chontal_grill2024;
+DROP DATABASE chontal_grill2024;
 
 -- Tabla Categoria
 CREATE TABLE `categoria` (

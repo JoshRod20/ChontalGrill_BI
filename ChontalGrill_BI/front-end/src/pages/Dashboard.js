@@ -21,7 +21,7 @@ const imprimirEstadisticas = () => {
                 <Card.Body>
                     <Card.Title>Estado ChontalGrill</Card.Title>
 
-                    <iframe title="REPORTE CHONTALGRILL" width="1024" height="804" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiNzM1ZjkyMTAtNjlhZS00MDc4LWFhNmItMDU3ZjM2OTZhZWNjIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                    <iframe title="REPORTE CHONTALGRILL" width="1024" height="804" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiZTc3MGZiNTAtMDFmZS00ZDAzLTk4ZWEtOTVjMzI4MDZmYTAxIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
                     <Button onClick={imprimirEstadisticas}>
                     Generar reporte con imagen

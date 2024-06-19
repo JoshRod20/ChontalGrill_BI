@@ -7,6 +7,10 @@
     import html2canvas from "html2canvas";
 
     import emailjs from 'emailjs-com';
+    import * as XLSX from 'xlsx';
+    import { FaFilePdf } from "react-icons/fa6";
+    import { MdEmail } from "react-icons/md";
+    import { FaFileExcel  } from 'react-icons/fa6';
 
     function Estadisticas({ rol }) {
     const [ordenes, setOrdenes] = useState([]); // Debes declarar una constante para cada gráfico para la declaración del estado 'ordenes' y su función 'setOrdenes' a través de useState, con un valor inicial de un array vacío
@@ -44,6 +48,16 @@
     };
 
 
+    const exportarAExcel = () => {
+        // Convertir los datos JSON a una hoja de trabajo de Excel
+        const worksheet = XLSX.utils.json_to_sheet(ordenes);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Ordenes');
+
+            // Generar y descargar el archivo Excel
+    XLSX.writeFile(workbook, 'Cantidad de órdenes por año.xlsx');
+};
+
     // Gráfico 2 //////////////////////////////////////////////////////////////////////////////////////////////
     useEffect(() => {
         fetch("http://localhost:5000/estadisticas/ordenestotalesporanio") // Realiza una solicitud GET al servidor para obtener las órdenes
@@ -75,18 +89,18 @@
                 label: "Cantidad de órdenes por año", // Etiqueta para la leyenda del gráfico
                 data: cantidad, // Asigna las cantidades de órdenes por año para la visualización
                 backgroundColor: [
-                    "rgba(255, 99, 132, 0.7)",   // Rojo
+                   // "rgba(255, 99, 132, 0.7)",   // Rojo
                     "rgba(54, 162, 235, 0.7)",   // Azul
-                    "rgba(255, 206, 86, 0.7)",   // Amarillo
-                    "rgba(75, 192, 192, 0.7)",   // Verde claro
-                    "rgba(153, 102, 255, 0.7)",  // Púrpura
-                    "rgba(255, 159, 64, 0.7)",   // Naranja
-                    "rgba(199, 199, 199, 0.7)",  // Gris claro
-                    "rgba(83, 102, 255, 0.7)",   // Azul medio
-                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
-                    "rgba(76, 175, 80, 0.7)",    // Verde
-                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
-                    "rgba(121, 85, 72, 0.7)"     // Marrón
+                  // "rgba(255, 206, 86, 0.7)",   // Amarillo
+                  //  "rgba(75, 192, 192, 0.7)",   // Verde claro
+                  //  "rgba(153, 102, 255, 0.7)",  // Púrpura
+                  //  "rgba(255, 159, 64, 0.7)",   // Naranja
+                  //  "rgba(199, 199, 199, 0.7)",  // Gris claro
+                  //  "rgba(83, 102, 255, 0.7)",   // Azul medio
+                  //  "rgba(244, 67, 54, 0.7)",    // Rojo claro
+                  //  "rgba(76, 175, 80, 0.7)",    // Verde
+                  //  "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
+                  //  "rgba(121, 85, 72, 0.7)"     // Marrón
                 ], // Define el color de fondo de las barras, puede ser cualquiera
                 borderColor: "rgba(51, 214, 18, 0)", // Define el color del borde de las barras, del mismo color
                 borderWidth: 1, // Define el ancho del borde de las barras, como prefieraws
@@ -162,8 +176,8 @@
 
     // Datos de ejemplo (reemplaza con tus datos reales)
     const data = {
-    to_name: 'Josh',
-    user_email: 'rodriguezjosh2003@gmail.com',
+    to_name: 'Eliab',
+    user_email: 'eliabjselvacruz51@gmail.com',
     message: ordenespormesdeanioFormateadas,
     };
     
@@ -179,6 +193,16 @@
         console.error('Error al enviar el correo:', error);
         });
     };
+
+    const exportarAExcel2 = () => {
+        // Convertir los datos JSON a una hoja de trabajo de Excel
+        const worksheet = XLSX.utils.json_to_sheet(ordenes2);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Ordenes');
+
+            // Generar y descargar el archivo Excel
+    XLSX.writeFile(workbook, 'Cantidad de órdenes por mes.xlsx');
+};
 
     //gráfico 2
 
@@ -209,18 +233,7 @@
                 label: "Cantidad de órdenes por mes",
                 data: cantidad,
                 backgroundColor: [
-                    "rgba(255, 99, 132, 0.7)",   // Rojo
-                    "rgba(54, 162, 235, 0.7)",   // Azul
-                    "rgba(255, 206, 86, 0.7)",   // Amarillo
-                    "rgba(75, 192, 192, 0.7)",   // Verde claro
-                    "rgba(153, 102, 255, 0.7)",  // Púrpura
-                    "rgba(255, 159, 64, 0.7)",   // Naranja
-                    "rgba(199, 199, 199, 0.7)",  // Gris claro
-                    "rgba(83, 102, 255, 0.7)",   // Azul medio
-                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
-                    "rgba(76, 175, 80, 0.7)",    // Verde
-                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
-                    "rgba(121, 85, 72, 0.7)"     // Marrón
+                "rgba(153, 102, 255, 0.7)",  // Púrpura
                 ],
                 borderColor: "rgba(51, 214, 18, 0)",
                 borderWidth: 1,
@@ -309,6 +322,17 @@
     };
 
 
+    const exportarAExcel3 = () => {
+        // Convertir los datos JSON a una hoja de trabajo de Excel
+        const worksheet = XLSX.utils.json_to_sheet(ordenes3);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Ordenes');
+
+            // Generar y descargar el archivo Excel
+    XLSX.writeFile(workbook, 'Cantidad de órdenes por día.xlsx');
+};
+
+
     useEffect(() => {
         fetch("http://localhost:5000/estadisticas/ordenespordiayanio")
         .then((response) => response.json())
@@ -336,18 +360,7 @@
                 label: "Cantidad de órdenes por dia",
                 data: cantidad,
                 backgroundColor: [
-                    "rgba(255, 99, 132, 0.7)",   // Rojo
-                    "rgba(54, 162, 235, 0.7)",   // Azul
-                    "rgba(255, 206, 86, 0.7)",   // Amarillo
-                    "rgba(75, 192, 192, 0.7)",   // Verde claro
-                    "rgba(153, 102, 255, 0.7)",  // Púrpura
                     "rgba(255, 159, 64, 0.7)",   // Naranja
-                    "rgba(199, 199, 199, 0.7)",  // Gris claro
-                    "rgba(83, 102, 255, 0.7)",   // Azul medio
-                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
-                    "rgba(76, 175, 80, 0.7)",    // Verde
-                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
-                    "rgba(121, 85, 72, 0.7)"     // Marrón
                 ],
                 borderColor: "rgba(51, 214, 18, 0)",
                 borderWidth: 1,
@@ -435,6 +448,16 @@
         });
     };
 
+    const exportarAExcel4 = () => {
+        // Convertir los datos JSON a una hoja de trabajo de Excel
+        const worksheet = XLSX.utils.json_to_sheet(ordenes4);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Ordenes');
+
+            // Generar y descargar el archivo Excel
+    XLSX.writeFile(workbook, 'Cantidad de órdenes totales por pedido.xlsx');
+};
+
     useEffect(() => {
         fetch("http://localhost:5000/estadisticas/ordenestotalesporpedido")
         .then((response) => response.json())
@@ -462,18 +485,7 @@
                 label: "Cantidad de órdenes totales por pedido",
                 data: cantidad,
                 backgroundColor: [
-                    "rgba(255, 99, 132, 0.7)",   // Rojo
-                    "rgba(54, 162, 235, 0.7)",   // Azul
-                    "rgba(255, 206, 86, 0.7)",   // Amarillo
-                    "rgba(75, 192, 192, 0.7)",   // Verde claro
-                    "rgba(153, 102, 255, 0.7)",  // Púrpura
-                    "rgba(255, 159, 64, 0.7)",   // Naranja
-                    "rgba(199, 199, 199, 0.7)",  // Gris claro
-                    "rgba(83, 102, 255, 0.7)",   // Azul medio
-                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
                     "rgba(76, 175, 80, 0.7)",    // Verde
-                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
-                    "rgba(121, 85, 72, 0.7)"     // Marrón
                 ],
                 borderColor: "rgba(51, 214, 18, 0)",
                 borderWidth: 1,
@@ -561,6 +573,16 @@
         });
     };
 
+    const exportarAExcel5 = () => {
+        // Convertir los datos JSON a una hoja de trabajo de Excel
+        const worksheet = XLSX.utils.json_to_sheet(ordenes5);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Ordenes');
+
+            // Generar y descargar el archivo Excel
+    XLSX.writeFile(workbook, 'Cantidad de órdenes totales por pedido.xlsx');
+};
+
     useEffect(() => {
         fetch("http://localhost:5000/estadisticas/ordenesporproductoymes")
         .then((response) => response.json())
@@ -589,17 +611,6 @@
                 data: cantidad,
                 backgroundColor: [
                     "rgba(255, 99, 132, 0.7)",   // Rojo
-                    "rgba(54, 162, 235, 0.7)",   // Azul
-                    "rgba(255, 206, 86, 0.7)",   // Amarillo
-                    "rgba(75, 192, 192, 0.7)",   // Verde claro
-                    "rgba(153, 102, 255, 0.7)",  // Púrpura
-                    "rgba(255, 159, 64, 0.7)",   // Naranja
-                    "rgba(199, 199, 199, 0.7)",  // Gris claro
-                    "rgba(83, 102, 255, 0.7)",   // Azul medio
-                    "rgba(244, 67, 54, 0.7)",    // Rojo claro
-                    "rgba(76, 175, 80, 0.7)",    // Verde
-                    "rgba(255, 235, 59, 0.7)",   // Amarillo brillante
-                    "rgba(121, 85, 72, 0.7)"     // Marrón
                 ],
                 borderColor: "rgba(51, 214, 18, 0)",
                 borderWidth: 1,
@@ -671,11 +682,14 @@
                     <canvas id="myChart" height="120"></canvas>
                 </Card.Body>
                 <Card.Body style={{ textAlign: 'center' }}>
-                    <Button onClick={generarReporteAlmacenImg1}>
-                    Imprimir PDF
+                    <Button onClick={generarReporteAlmacenImg1} style={{ background: 'red' }}>
+                    <FaFilePdf style={{ color: 'white' }} />
                     </Button>
                     <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo} >
-                        Enviar por Correo
+                    <MdEmail style={{ color: 'white' }}/>
+                    </Button>
+                    <Button variant="success" onClick={exportarAExcel} className="m-1">
+                        <FaFileExcel style={{ color: 'white' }} />
                     </Button>
                 </Card.Body>
                 </Card>
@@ -689,11 +703,14 @@
                     <canvas id="myChart2" height="120"></canvas>
                 </Card.Body>
                 <Card.Body style={{ textAlign: 'center' }}>
-                    <Button onClick={generarReporteAlmacenImg0}>
-                    Imprimir PDF
+                    <Button onClick={generarReporteAlmacenImg0} style={{ background: 'red' }}>
+                    <FaFilePdf style={{ color: 'white' }} />
                     </Button>
                     <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo2} >
-                        Enviar por Correo
+                    <MdEmail style={{ color: 'white' }}/>
+                    </Button>
+                    <Button variant="success" onClick={exportarAExcel2} className="m-1">
+                        <FaFileExcel style={{ color: 'white' }} />
                     </Button>
                 </Card.Body>
                 </Card>
@@ -705,11 +722,14 @@
                     <canvas id="myChart3" height="120"></canvas>
                 </Card.Body>
                 <Card.Body style={{ textAlign: 'center' }}>
-                    <Button onClick={generarReporteAlmacenImg3}>
-                    Imprimir PDF
+                    <Button onClick={generarReporteAlmacenImg3} style={{ background: 'red' }}>
+                    <FaFilePdf style={{ color: 'white' }} />
                     </Button>
                     <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo3} >
-                        Enviar por Correo
+                    <MdEmail style={{ color: 'white' }}/>
+                    </Button>
+                    <Button variant="success" onClick={exportarAExcel3} className="m-1">
+                        <FaFileExcel style={{ color: 'white' }} />
                     </Button>
                 </Card.Body>
                 </Card>
@@ -721,11 +741,14 @@
                     <canvas id="myChart4" height="120"></canvas>
                 </Card.Body>
                 <Card.Body style={{ textAlign: 'center' }}>
-                    <Button onClick={generarReporteAlmacenImg4}>
-                    Imprimir PDF
+                    <Button onClick={generarReporteAlmacenImg4} style={{ background: 'red' }}>
+                    <FaFilePdf style={{ color: 'white' }} />
                     </Button>
                     <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo4} >
-                        Enviar por Correo
+                    <MdEmail style={{ color: 'white' }}/>
+                    </Button>
+                    <Button variant="success" onClick={exportarAExcel4} className="m-1">
+                        <FaFileExcel style={{ color: 'white' }} />
                     </Button>
                 </Card.Body>
                 </Card>
@@ -737,11 +760,14 @@
                     <canvas id="myChart5" height="120"></canvas>
                 </Card.Body>
                 <Card.Body style={{ textAlign: 'center' }}>
-                    <Button onClick={generarReporteAlmacenImg5}>
-                    Imprimir PDF
+                    <Button onClick={generarReporteAlmacenImg5} style={{ background: 'red' }}>
+                    <FaFilePdf style={{ color: 'white' }} />
                     </Button>
                     <Button style={{ marginLeft: '6px' }} onClick={enviarCorreo5} >
-                        Enviar por Correo
+                    <MdEmail style={{ color: 'white' }}/>
+                    </Button>
+                    <Button variant="success" onClick={exportarAExcel5} className="m-1">
+                        <FaFileExcel style={{ color: 'white' }} />
                     </Button>
                 </Card.Body>
                 </Card>

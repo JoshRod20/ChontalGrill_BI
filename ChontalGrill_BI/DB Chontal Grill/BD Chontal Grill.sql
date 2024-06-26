@@ -108,7 +108,7 @@ CREATE TABLE `menu` (
   `Precio` DECIMAL(6,2) NOT NULL,
   `Imagen` LONGBLOB
 );
-
+SELECT * FROM categoria;
 -- Tabla Detalle_Orden
 CREATE TABLE `detalle_orden` (
   `ID_Detalle_Orden` INT AUTO_INCREMENT PRIMARY KEY NOT NULL,

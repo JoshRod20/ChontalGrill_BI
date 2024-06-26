@@ -1,7 +1,7 @@
 Create Database ChontalGrill_DM;
 Use ChontalGrill_DM;
 DROP DATABASE ChontalGrill_DM;
-
+SELECT * FROM H_Orden;
 -- Tabla Hechos
 Create Table H_Orden (
 ID_HOrden Int Primary Key,

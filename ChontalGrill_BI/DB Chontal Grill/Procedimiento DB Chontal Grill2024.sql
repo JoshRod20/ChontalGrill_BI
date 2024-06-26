@@ -2,51 +2,41 @@ USE chontal_grill2024;
 
 /*Procedimiento almacenado de Categoria*/
 
-DROP PROCEDURE InsertarCategoria;
+DROP PROCEDURE EliminarCategoria;
 
 DELIMITER //
+
 CREATE PROCEDURE InsertarCategoria(
-    IN p_Nombre VARCHAR(50)
+    IN p_NombreC VARCHAR(50)
 )
 BEGIN
-    INSERT INTO Categoria (NombreC)
-    VALUES (p_Nombre);
+    INSERT INTO categoria (NombreC)
+    VALUES (p_NombreC);
 END //
-DELIMITER ;
 
-
-
-
-	DELIMITER //
 CREATE PROCEDURE ObtenerCategorias()
 BEGIN
-    SELECT * FROM Categoria;
+    SELECT * FROM categoria;
 END //
-DELIMITER ;
 
-
-DELIMITER //
 CREATE PROCEDURE ActualizarCategoria(
     IN p_ID_Categoria INT,
-    IN p_Nombre VARCHAR(50)
+    IN p_NombreC VARCHAR(50)
 )
 BEGIN
-    UPDATE Categoria
-    SET Nombre = p_Nombre
+    UPDATE categoria
+    SET NombreC = p_NombreC
     WHERE ID_Categoria = p_ID_Categoria;
 END //
-DELIMITER ;
 
-
-
-DELIMITER //
 CREATE PROCEDURE EliminarCategoria(
     IN p_ID_Categoria INT
 )
 BEGIN
-    DELETE FROM Categoria
+    DELETE FROM categoria
     WHERE ID_Categoria = p_ID_Categoria;
 END //
+
 DELIMITER ;
 
 

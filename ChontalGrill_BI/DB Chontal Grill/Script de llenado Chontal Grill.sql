@@ -107,43 +107,43 @@ INSERT INTO metodo_de_pago (Descripcion) VALUES
 ('Cheque');
 
 INSERT INTO orden (ID_Cliente, ID_Empleado, Id_Tipo_Orden, Estado, Fecha_Hora, ID_Metodo_Pago)
-VALUES (1, 1, 1, 'COMPLETADA', '2024-03-15', 1);
+VALUES (1, 1, 1, 'COMPLETADA', '2022-03-15', 1);
 SET @ID_Orden = last_insert_id();
 INSERT INTO detalle_orden (ID_Menu, ID_Orden, Cantidad, Precio)
 VALUES (1, @ID_Orden, 1, 200) ;
 
 INSERT INTO orden (ID_Cliente, ID_Empleado, Id_Tipo_Orden, Estado, Fecha_Hora, ID_Metodo_Pago)
-VALUES (2, 2, 2, 'EN PROCESO', '2024-03-17', 2);
+VALUES (2, 2, 2, 'EN PROCESO', '2022-03-17', 2);
 SET @ID_Orden = last_insert_id();
 INSERT INTO detalle_orden (ID_Menu, ID_Orden, Cantidad, Precio)
 VALUES (2, @ID_Orden, 15, 230);
 
 INSERT INTO orden (ID_Cliente, ID_Empleado, Id_Tipo_Orden, Estado, Fecha_Hora, ID_Metodo_Pago)
-VALUES (3, 3, 1, 'COMPLETADA', '2024-03-18', 3);
+VALUES (3, 3, 1, 'COMPLETADA', '2022-03-18', 3);
 SET @ID_Orden = last_insert_id();
 INSERT INTO detalle_orden (ID_Menu, ID_Orden, Cantidad, Precio)
 VALUES (3, @ID_Orden, 20, 250);
 
 INSERT INTO orden (ID_Cliente, ID_Empleado, Id_Tipo_Orden, Estado, Fecha_Hora, ID_Metodo_Pago)
-VALUES (4, 4, 2, 'COMPLETADA', '2024-03-22', 4);
+VALUES (4, 4, 2, 'COMPLETADA', '2022-03-22', 4);
 SET @ID_Orden = last_insert_id();
 INSERT INTO detalle_orden (ID_Menu, ID_Orden, Cantidad, Precio)
 VALUES (4, @ID_Orden, 50, 250);
 
 INSERT INTO orden (ID_Cliente, ID_Empleado, Id_Tipo_Orden, Estado, Fecha_Hora, ID_Metodo_Pago)
-VALUES (5, 1, 1, 'EN PROCESO', '2024-04-02', 5);
+VALUES (5, 1, 1, 'EN PROCESO', '2022-04-02', 5);
 SET @ID_Orden = last_insert_id();
 INSERT INTO detalle_orden (ID_Menu, ID_Orden, Cantidad, Precio)
 VALUES (5, @ID_Orden, 150, 250);
 
 INSERT INTO orden (ID_Cliente, ID_Empleado, Id_Tipo_Orden, Estado, Fecha_Hora, ID_Metodo_Pago)
-VALUES (6, 2, 2, 'COMPLETADA', '2024-04-04', 1);
+VALUES (6, 2, 2, 'COMPLETADA', '2022-04-04', 1);
 SET @ID_Orden = last_insert_id();
 INSERT INTO detalle_orden (ID_Menu, ID_Orden, Cantidad, Precio)
 VALUES (6, @ID_Orden, 25, 210);
 
 INSERT INTO orden (ID_Cliente, ID_Empleado, Id_Tipo_Orden, Estado, Fecha_Hora, ID_Metodo_Pago)
-VALUES (7, 3, 1, 'COMPLETADA', '2024-04-08', 2);
+VALUES (7, 3, 1, 'COMPLETADA', '2022-04-08', 2);
 SET @ID_Orden = last_insert_id();
 INSERT INTO detalle_orden (ID_Menu, ID_Orden, Cantidad, Precio)
 VALUES (7, @ID_Orden, 25, 210);

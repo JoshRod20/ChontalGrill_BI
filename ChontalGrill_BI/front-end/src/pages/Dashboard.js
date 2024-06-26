@@ -14,14 +14,16 @@ const imprimirEstadisticas = () => {
 
         <Container className="margen-conten" responsive>
 
-            <Row className="g-3">
+            <Row className="g-3 justify-content-center">
             
             <Col sm="12" md="12" lg="12">
                 <Card>
                 <Card.Body>
                     <Card.Title>Estado ChontalGrill</Card.Title>
 
-                    <iframe title="REPORTE CHONTALGRILL" width="1024" height="804" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiZTc3MGZiNTAtMDFmZS00ZDAzLTk4ZWEtOTVjMzI4MDZmYTAxIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                    <div className="d-flex justify-content-center">
+                        <iframe title="REPORTE CHONTALGRILL" width="1024" height="804" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiMjdlMjI3OTYtOTM0Mi00MzcxLThiZTQtYWRkNjM3YmYyMjlhIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
 
                     <Button onClick={imprimirEstadisticas}>
                     Generar reporte con imagen
@@ -37,4 +39,4 @@ const imprimirEstadisticas = () => {
     );
     }
 
-    export default Dashboard; // Exporta el componente Estadisticas para su uso en otras partes de la aplicación  
+    export default Dashboard; // Exporta el componente Estadisticas para su uso en otras partes de la aplicación

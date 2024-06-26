@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav, Offcanvas, Button, Container,NavDropdown } from "react-bootstrap";
+import "../pages/Login";
+import {
+  Navbar,
+  Nav,
+  Offcanvas,
+  Button,
+  Container,
+  NavDropdown,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa"; // Importación del ícono de salida
 import "../styles/App.css";
 import logo from "../assets/images/LogoOficial.png";
+import { FaRightFromBracket } from "react-icons/fa6";
 
 function Header({ rol, setRol }) {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => setShowMenu(!showMenu);
 
-  const handleLogout = () => {
-    setRol("Cliente");
-    localStorage.setItem("userRol", "Cliente");
+  const cerrarSesion = () => {
+    localStorage.removeItem("userRol");
   };
 
   return (
@@ -146,25 +154,35 @@ function Header({ rol, setRol }) {
                     Registrar Reservaciones
                   </Nav.Link>
                   <NavDropdown title="Estadisticas" id="descuentos">
-  <NavDropdown.Item>
-    <Link to="/EstadisticasEmpleado" className="link-unstyled">Estadisticas Empleado</Link>
-  </NavDropdown.Item>
-  <NavDropdown.Item>
-    <Link to="/EstadisticasOrden" className="link-unstyled">Reportes</Link>
-  </NavDropdown.Item>
-  <NavDropdown.Item>
-    <Link to="/Dashboard" className="link-unstyled">Dashboard</Link>
-  </NavDropdown.Item>
-</NavDropdown>
+                    <NavDropdown.Item>
+                      <Link
+                        to="/EstadisticasEmpleado"
+                        className="link-unstyled"
+                      >
+                        Estadisticas Empleado
+                      </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/EstadisticasOrden" className="link-unstyled">
+                        Reportes
+                      </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/Dashboard" className="link-unstyled">
+                        Dashboard
+                      </Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
 
-                  
-                  <Button
-                    variant="outline-light"
-                    onClick={handleLogout}
-                    className="ms-2"
-                  >
-                    <FaSignOutAlt /> Salir
-                  </Button>
+                  <Nav.Link
+                  as={Link}
+                  to="/login"
+                  onClick={cerrarSesion}
+                  className="btn btn-outline-dark ms-2"
+                >
+                      Cerrar Sesión  
+                      <FaRightFromBracket />
+                  </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -198,13 +216,15 @@ function Header({ rol, setRol }) {
                 >
                   Estadísticas
                 </Nav.Link>
-                <Button
-                  variant="outline-dark"
-                  onClick={handleLogout}
-                  className="w-100 mt-3"
+                <Nav.Link
+                  as={Link}
+                  to="/login"
+                  onClick={cerrarSesion}
+                  className="btn btn-outline-dark ms-2"
                 >
-                  <FaSignOutAlt /> Salir
-                </Button>
+                      Cerrar Sesión
+                      <FaRightFromBracket />
+                  </Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Offcanvas>
@@ -258,13 +278,15 @@ function Header({ rol, setRol }) {
                   >
                     Gestion Orden
                   </Nav.Link>
-                  <Button
-                    variant="outline-light"
-                    onClick={handleLogout}
-                    className="ms-2"
-                  >
-                    <FaSignOutAlt /> Salir
-                  </Button>
+                  <Nav.Link
+                  as={Link}
+                  to="/login"
+                  onClick={cerrarSesion}
+                  className="btn btn-outline-dark ms-2"
+                >
+                      Cerrar Sesión
+                      < FaRightFromBracket />
+                  </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
               <Button
@@ -302,13 +324,15 @@ function Header({ rol, setRol }) {
                 >
                   Gestion Orden
                 </Nav.Link>
-                <Button
-                    variant="outline-light"
-                    onClick={handleLogout}
-                    className="ms-2"
+                <Nav.Link>
+                  <Link
+                    to="/login"
+                    onClick={cerrarSesion}
+                    className="link-unstyled"
                   >
-                    <FaSignOutAlt /> Salir
-                  </Button>
+                    Cerrar Sesión < FaRightFromBracket />
+                  </Link>
+                </Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Offcanvas>

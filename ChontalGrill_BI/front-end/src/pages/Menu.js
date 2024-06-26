@@ -53,11 +53,14 @@ function App() {
   useEffect(() => {
     const performFilter = () => {
       if (searchTerm) {
-        const filtered = data.filter(
-          (item) =>
-            item.Nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.Descripcion.toLowerCase().includes(searchTerm.toLowerCase())
-        );
+        const filtered = data.filter((item) => {
+          const nombre = item.Nombre ? item.Nombre.toLowerCase() : '';
+          const descripcion = item.Descripcion ? item.Descripcion.toLowerCase() : '';
+          return (
+            nombre.includes(searchTerm.toLowerCase()) ||
+            descripcion.includes(searchTerm.toLowerCase())
+          );
+        });
         setFilteredData(filtered);
       } else {
         setFilteredData(data);
@@ -220,7 +223,7 @@ function App() {
 
   const filteredCategorias = searchCategoryTerm
     ? categorias.filter((categoria) =>
-        categoria.Nombre.toLowerCase().includes(
+        (categoria.NombreC ? categoria.NombreC.toLowerCase() : '').includes(
           searchCategoryTerm.toLowerCase()
         )
       )
@@ -229,7 +232,7 @@ function App() {
   useEffect(() => {
     if (searchCategoryTerm) {
       const matchedCategory = categorias.find((categoria) =>
-        categoria.Nombre.toLowerCase().includes(
+        (categoria.NombreC ? categoria.NombreC.toLowerCase() : '').includes(
           searchCategoryTerm.toLowerCase()
         )
       );
@@ -279,7 +282,7 @@ function App() {
                           key={categoria.ID_Categoria}
                           value={categoria.ID_Categoria}
                         >
-                          {categoria.Nombre}
+                          {categoria.NombreC}
                         </option>
                       ))}
                     </Form.Select>

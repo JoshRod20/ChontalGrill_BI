@@ -5,7 +5,7 @@ import { FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 
 function VisualizarCategoria() {
   const [categorias, setCategorias] = useState([]);
-  const [nombre, setNombre] = useState(""); // Para agregar
+  const [NombreC, setNombreC] = useState(""); // Para agregar
   const [nombreBusqueda, setNombreBusqueda] = useState(""); // Para buscar
   const [nombreSeleccionado, setNombreSeleccionado] = useState(""); // Para editar
   const [idSeleccionado, setIdSeleccionado] = useState(null);
@@ -28,7 +28,7 @@ function VisualizarCategoria() {
 
   const handleAgregar = async () => {
     const nuevaCategoria = {
-      Nombre: nombre,
+      NombreC: NombreC,
     };
     try {
       const response = await fetch(`http://localhost:5000/categoria/create`, {
@@ -41,10 +41,9 @@ function VisualizarCategoria() {
 
       if (response.ok) {
         alert("Categoría agregada con éxito");
-        setNombre("");
+        setNombreC("");
         obtenerCategorias();
         setIsEditing(false);
-
       } else {
         alert("Error al agregar la categoría");
       }
@@ -56,7 +55,7 @@ function VisualizarCategoria() {
 
   const handleActualizar = async () => {
     const dataToUpdate = {
-      Nombre: nombreSeleccionado,
+      NombreC: nombreSeleccionado,
     };
     try {
       const response = await fetch(
@@ -108,7 +107,7 @@ function VisualizarCategoria() {
 
   const categoriasFiltradas = Array.isArray(categorias)
     ? categorias.filter((categoria) =>
-        categoria && categoria.Nombre && categoria.Nombre.toLowerCase().includes(nombreBusqueda.toLowerCase())
+        categoria && categoria.NombreC && categoria.NombreC.toLowerCase().includes(nombreBusqueda.toLowerCase())
       )
     : [];
 
@@ -122,8 +121,8 @@ function VisualizarCategoria() {
             <Form.Group>
               <Form.Label>{isEditing ? 'Editar Categoría' : 'Agregar Categoría'}</Form.Label>
               <Form.Control
-                value={isEditing ? nombreSeleccionado : nombre}
-                onChange={(e) => isEditing ? setNombreSeleccionado(e.target.value) : setNombre(e.target.value)}
+                value={isEditing ? nombreSeleccionado : NombreC}
+                onChange={(e) => isEditing ? setNombreSeleccionado(e.target.value) : setNombreC(e.target.value)}
                 placeholder="Nombre de la categoría"
               />
               <Button className="mt-2" onClick={isEditing ? handleActualizar : handleAgregar}>
@@ -152,25 +151,25 @@ function VisualizarCategoria() {
                 {categoriasFiltradas.map((categoria) => (
                   <tr key={categoria.ID_Categoria}>
                     <td>{categoria.ID_Categoria}</td>
-                    <td>{categoria.Nombre}</td>
+                    <td>{categoria.NombreC}</td>
                     <td style={{ display: 'flex', justifyContent: 'center' }}>
                       <Button
                         variant="outline-primary"
                         style={{ margin: "5px", padding: "4px 8px" }}
                         onClick={() => {
                           setIdSeleccionado(categoria.ID_Categoria);
-                          setNombreSeleccionado(categoria.Nombre);
+                          setNombreSeleccionado(categoria.NombreC);
                           setIsEditing(true);
                         }}
                       >
-                        <FaEdit size={32} />
+                        <FaEdit />
                       </Button>
                       <Button
                         variant="outline-danger"
                         style={{ margin: "5px", padding: "4px 8px" }}
                         onClick={() => handleEliminar(categoria.ID_Categoria)}
                       >
-                        <FaTrash size={32} />
+                        <FaTrash />
                       </Button>
                     </td>
                   </tr>

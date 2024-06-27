@@ -3,8 +3,8 @@
 :root {
   --global-height: 100vh;
   --cliente-navbar-bg: #ffa500;
-  --administrador-navbar-bg: #32a852;
-  --mesero-navbar-bg: #08959f;
+  --administrador-navbar-bg: #7b227e;
+  --mesero-navbar-bg: #3786d5;
 }
 
 body {

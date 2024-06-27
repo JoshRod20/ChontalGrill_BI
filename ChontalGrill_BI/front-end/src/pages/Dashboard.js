@@ -22,7 +22,8 @@ const imprimirEstadisticas = () => {
                     <Card.Title>Estado ChontalGrill</Card.Title>
 
                     <div className="d-flex justify-content-center">
-                        <iframe title="REPORTE CHONTALGRILL" width="1024" height="804" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiMjdlMjI3OTYtOTM0Mi00MzcxLThiZTQtYWRkNjM3YmYyMjlhIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                        <iframe title="REPORTE CHONTALGRILL" width="1024" height="804" 
+    src="https://app.fabric.microsoft.com/view?r=eyJrIjoiMjdlMjI3OTYtOTM0Mi00MzcxLThiZTQtYWRkNjM3YmYyMjlhIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
                     </div>
 
                     <Button onClick={imprimirEstadisticas}>

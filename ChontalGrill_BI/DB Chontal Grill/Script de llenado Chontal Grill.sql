@@ -69,6 +69,9 @@ INSERT INTO cliente (Cedula, Nombres, Apellidos, Telefono, Correo, Contraseña) 
 ('0012307011008M', 'Ricardo Emilio', 'Castillo Orozco', '89645207', 'ricardoc123@hotmail.com', '5161'),
 ('1213008041009F', 'Daniela Lucía', 'Herrera Salinas', '88901352', 'danielah754@yahoo.com', '1617');
 
+INSERT INTO cliente (Cedula, Nombres, Apellidos, Telefono, Correo, Contraseña) VALUES 
+('1281420001001E', 'Eliab', 'Selva Cruz', '87373581', 'eliabjselvacruz51@gmail.com', '1234');
+
 INSERT INTO menu ( ID_Categoria, Nombre, Descripcion, Precio) VALUES 
 (1, 'Salchipapas', 'Salchipapas con queso Chedar', 200),
 (1, 'Canasta de camarón', 'Canastas de plátano con camarones', 380),

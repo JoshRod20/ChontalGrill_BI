@@ -58,7 +58,7 @@ CREATE TABLE `bitacora` (
   `Valores_Antiguos` TEXT NOT NULL,
   `Valores_Nuevos` TEXT NOT NULL
 );
-
+select * from orden;
 -- Tabla Orden
 CREATE TABLE `orden` (
   `ID_Orden` INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
